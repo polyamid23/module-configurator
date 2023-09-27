@@ -1,0 +1,18 @@
+<div *ngIf="item" class="item">
+  <div class="item-name">
+    <div>{{item.name}}</div>
+    <div class="cluster">{{item.cluster}}</div>
+  </div>
+
+  <div class="item-actions">
+    <button
+      [disabled]="isFirst(item)"
+      (click)="moveUp(item)">🡅</button>
+    <button
+      [disabled]="isLast(item)"
+      (click)="moveDown(item)">🡇</button>
+    <button
+      (click)="removeFromCart(item)"
+    >✖</button>
+  </div>
+</div>

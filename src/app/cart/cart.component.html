@@ -1,0 +1,13 @@
+<div class="cart">
+  <h4 class="headline" (click)="toggle()">Konfiguration ({{items.length}}) <span>{{ isOpen ? '🡇' : '🡅' }}</span></h4>
+  <div class="cart-content" [class]="{hidden: !isOpen}">
+    <div class="cart-items">
+      <app-cart-item *ngFor="let item of items" [item]="item"></app-cart-item>
+    </div>
+    <div class="cart-actions">
+      <button
+        [disabled]="!hasAllClusters()"
+        (click)="makeOrder()">Konfiguration abschicken</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.module.hidden {
+  display: none;
+}
+
+summary {
+  cursor: pointer;
+}
+
+summary, .summary {
+  padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:after {
+  content: "►";
+}
+
+details[open] summary:after {
+  content: "▼";
+}
+
+summary * {
+  display: inline;
+}
+
+h4 {
+  margin: 0;
+  width: 100%;
+}
+

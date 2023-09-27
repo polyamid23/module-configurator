@@ -1,0 +1,22 @@
+<div *ngIf="style === 'all'">
+  <div class="summary">
+    <h4>Alle Module</h4>
+  </div>
+  <app-modules-item *ngFor="let module of modules"
+    [module]="module"
+    class="module">
+  </app-modules-item>
+</div>
+
+<div *ngIf="style === 'cluster'">
+  <details *ngFor="let cluster of clusters">
+    <summary><h4>{{cluster}}</h4></summary>
+    <app-modules-item
+      *ngFor="let module of modules"
+      class="module"
+      [module]="module"
+      [class]="{hidden: module.cluster !== cluster}"
+    >
+    </app-modules-item>
+  </details>
+</div>

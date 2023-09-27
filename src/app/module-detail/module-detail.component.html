@@ -1,0 +1,19 @@
+<div *ngIf="module" class="module-detail">
+  <h2>{{module.name}}</h2>
+  <div>
+    {{ module.description }}
+  </div>
+  <button *ngIf="!isInCart()"
+    (click)="addToCart()">
+      Hinzufügen
+  </button>
+  <button *ngIf="isInCart()"
+    (click)="removeFromCart()">
+      Entfernen
+  </button>
+</div>
+
+<div *ngIf="!module" class="module-detail">
+  <h2>Kein Modul ausgewählt oder nicht gefunden</h2>
+</div>
+

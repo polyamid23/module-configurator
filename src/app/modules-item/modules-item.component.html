@@ -1,0 +1,19 @@
+<div *ngIf="module"
+  class="module">
+  <a routerLink="/module/{{module.id}}">
+    {{module.name}}
+  </a>
+  <button *ngIf="!isInCart(module)"
+    class="add"
+    (click)="addToCart(module)"
+  >
+    <span>✖</span>
+  </button>
+
+  <button *ngIf="isInCart(module)"
+    class="remove"
+    (click)="removeFromCart(module)"
+  >
+    <span>✖</span>
+  </button>
+</div>
